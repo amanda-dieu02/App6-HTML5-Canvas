@@ -59,10 +59,10 @@ function draw_image() { //the funciton to add an image to the canvas
   	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
   	var puppyPic = document.getElementById("puppyPic"); //calls about the image
-  	ctx.drawImage(puppyPic,0,0,50,50); //sets the size parameters for the image
+  	ctx.drawImage("puppyPic",0,0,50,50); //sets the size parameters for the image
 	var image2 = new Image (); //calls about the new image
 	image2.src ="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2020/07/09151754/Golden-Retriever-puppy-standing-outdoors.jpg"; //source of the image
-	ctx.drawImage(image2, 100,100,70,50)
+	ctx.drawImage("image2", 100,100,70,50)
 }	
 	
 function clear_canvas(){ //the function that erases everything on the canvas
