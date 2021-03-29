@@ -58,8 +58,11 @@ function add_name() { //the function to add text to the canvas, in this case, my
 function draw_image() { //the funciton to add an image to the canvas
   	var c = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
-  	var img = document.getElementById("puppy"); //calls about the image
-  	ctx.drawImage(puppy,10,10); //sets the size parameters for the image
+  	var puppyPic = document.getElementById("puppyPic"); //calls about the image
+  	ctx.drawImage(puppyPic,0,0,50,50); //sets the size parameters for the image
+	var image2 = new Image (); //calls about the new image
+	image2.src ="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2020/07/09151754/Golden-Retriever-puppy-standing-outdoors.jpg"; //source of the image
+	ctx.drawImage(image2, 100,100,70,50)
 }	
 	
 function clear_canvas(){ //the function that erases everything on the canvas
@@ -111,7 +114,6 @@ function clear_canvas(){ //the function that erases everything on the canvas
 	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a> <!--Button that runs the "add_name" function whenever clicked on to add my name to the canvas.-->
 	
 	<a onclick="draw_image();" class="w3-btn w3-black"> Add an image</a> <!--Button that runs "draw_image" funciton whenever clicked on to add image that was chosen.-->
-	    <img id="puppy" src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2020/07/09151754/Golden-Retriever-puppy-standing-outdoors.jpg" alt="Golden Retriever Puppy" width="200" height="100">
 	
 	<a onclick="clear_canvas();" class="w3-btn w3-black"> Clear</a> <!--Button that runs "clear_canvas" function and erase canvas whenever clicked on.-->
 	
