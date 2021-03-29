@@ -40,24 +40,23 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 	
-var dog1=new Image();
+var dog1 = new Image();
 	dog1.addEventListener('load'), eventDogLoad, false); // adds image to dog1 file
 	dog1.src = "puppy-image.jpg"; //specifies specific image to use that has been saved to file
 	
 var canvas= document.getElementById("canvas");
 var ctx= canvas.getContext("2d");
 	
-function draw_rectangle() {  //creates a rectangle
-  var canvas = document.getElementById("canvas");
-  var context = canvas.getContext("2d");
-  context.fillRect(50, 25, 150, 100); //sets parameters for the size of the rectangle within the canvas
+function draw_a() {  //creates a rectangle
+  var a_canvas = document.getElementById("a");
+  var a_context = a_canvas.getContext("2d");
+  a_context.fillRect(50, 25, 150, 100); //sets parameters for the size of the rectangle within the canvas
 }
 
 function add_name() {  //writes my name onto the canvas
-  var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
-  ctx.font = "30px Arial";
-  ctx.fillText("Amanda", 10, 50); //sets parameters for how big my name will appear on the canvas
+  var a_canvas = document.getElementById("a");
+  var a_context = a_canvas.getContext("2d");
+  a_context.fillText("Amanda Dieu"), 50,80); //sets parameters for how big my name will appear on the canvas
 }	
 function draw_image() {  //draws a pre-set image onto the canvas
 	var a_canvas = document.getElementById("a");
@@ -66,6 +65,11 @@ function draw_image() {  //draws a pre-set image onto the canvas
 }
 function eventDogLoad() {  //creates function that specifies the chosen image to the canvas
 	drawScreen();
+}
+function clear_canvas() {  //clears the canvas
+	var a_canvas = document.getElementById("a");
+	var a_context = a_canvas.getContext("2d");
+	a_context.clearRect(1,1,200,200); //clears the canvas set to dimensions listed
 }
 	
 </script> <!--End of Javascript-->
@@ -103,13 +107,15 @@ function eventDogLoad() {  //creates function that specifies the chosen image to
 	
 <div id="content" class="w3-container"> <!--Indicates start of the actual content on the page.--> 
 	
-	<p> <canvas id="canvas" width="300" height="200" style="border:1px solid #000000;"> </canvas> <p> <!--sets border and parameters for the canvas-->
+	<center> <canvas id="a" width="300" height="200" style="border:1px solid #000000;"> </canvas> <center> <!--sets border and parameters for the canvas-->
 	
-	<a onclick="draw_rectangle()"; class="w3-btn w3-black"> Draw a rectangle</a> <!--This is a button that runs the function "draw_rectangle" when pressed and will generate a rectangle onto the canvas.-->
+	<center> <button onclick = "draw_a();">Draw rectangle</button><center> <!--This is a button that runs the function "draw_rectangle" when pressed and will generate a rectangle onto the canvas.-->
 	
-	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a> <!--This is a button that runs function "add_name" when clicked on and will add "Amanda" onto the canvas.-->
+	<center> <button onclick = "add_name();">Write name</button><center> <!--This is a button that runs function "add_name" when clicked on and will add "Amanda Dieu" onto the canvas.-->
 	
-        <a onclick="draw_image();" class="w3-btn w3-black"> Draw Image </a> <!--This is the button that runs function "draw_image" when clicked and will add a puppy image to the canvas.-->
+	<center> <button onclick = "draw_image();">Draw an image</button><center> <!--This is the button that runs function "draw_image" when clicked and will add a puppy image to the canvas.-->
+	
+	<center> <button onclick = "clear_canvas();">Clear</button><center> <!--This is a button that runs function "clear_canvas" when clicked to clear out the canvas.
 	
 </div> <!--Indicates end of the actual content on the page. Everything below this is just the disclaimer and footer.-->
 	
