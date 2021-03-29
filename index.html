@@ -58,19 +58,12 @@ function add_name() {
 }
 	
 function draw_image() {
-	var canvas = document.getElementById("canvas");
+  	var c = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
-	ctx.drawImage(dog1, 80,80,100,100);
-}
-
-function eventDogLoad(){
-	drawScreen();
-}
-
-function drawScreen(){
-	ctx.drawImage(dog1, 80,80,100,100);
-}
-	
+  	var img = document.getElementById("puppy");
+  	ctx.drawImage(puppy,10,10);
+ 
+}	
 function clear_canvas(){
 	var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
@@ -111,6 +104,7 @@ function clear_canvas(){
 	<a onclick="draw_rectangle();" class="w3-btn w3-black"> Draw a rectangle</a>
 	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a>
 	<a onclick="draw_image();" class="w3-btn w3-black"> Add an image</a>
+	        <img id="puppy" src="puppy-image.jpg" alt="Golden Retriever Puppy" width="200" height="100">
 	<a onclick="clear_canvas();" class="w3-btn w3-black"> Clear</a>
 
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
