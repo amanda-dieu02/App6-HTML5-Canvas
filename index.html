@@ -56,7 +56,7 @@ function add_name() { //the function to add text to the canvas, in this case, my
 }
 	
 function draw_image() { //the funciton to add an image to the canvas
-  	var c = document.getElementById("canvas");
+  	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
   	var puppyPic = document.getElementById("puppyPic"); //calls about the image
   	ctx.drawImage(puppyPic,0,0,50,50); //sets the size parameters for the image
