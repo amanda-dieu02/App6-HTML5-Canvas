@@ -17,10 +17,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-blah, blah, blah,
+The goal of this code is to create a canvas using HTML5 and add 4 required elements: rectangle, name, image, and a clearing function.
  
 Known Issues:
-blah, blah, blah, blah
+I struggled a little bit with loading an image onto the canvas and clearing the canvas. 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -34,28 +34,41 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
    </head> 
 
 
-<script>
+<script> // beginning of JavaScript
+	
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 	
+var dog1=new Image();
+	dog1.addEventListener('load'), eventDogLoad, false); // adds image to dog1 file
+	dog1.src = "puppy-image.jpg"; //specifies specific image to use that has been saved to file
+	
 var canvas= document.getElementById("canvas");
 var ctx= canvas.getContext("2d");
 	
-function draw_rectangle() {
+function draw_rectangle() {  //creates a rectangle
   var canvas = document.getElementById("canvas");
   var context = canvas.getContext("2d");
-  context.fillRect(50, 25, 150, 100);
+  context.fillRect(50, 25, 150, 100); //sets parameters for the size of the rectangle within the canvas
 }
 
-function add_name() {
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-ctx.font = "30px Arial";
-ctx.fillText("Amanda", 10, 50);
+function add_name() {  //writes my name onto the canvas
+  var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  ctx.font = "30px Arial";
+  ctx.fillText("Amanda", 10, 50); //sets parameters for how big my name will appear on the canvas
+}	
+function draw_image() {  //draws a pre-set image onto the canvas
+	var a_canvas = document.getElementById("a");
+	var a_context = a_canvas.getContext("2d");
+	a_context.drawImage(dog1, 80,80,100,100); // function that draws the image 
+}
+function eventDogLoad() {  //creates function that specifies the chosen image to the canvas
+	drawScreen();
 }
 	
-</script>
+</script> <!--End of Javascript-->
 
 
 
@@ -76,31 +89,30 @@ ctx.fillText("Amanda", 10, 50);
   .page:target {
     left: 0vw;
     z-index: 1;
-}
-   
-#clearCanvas {
-	margin-top: 30px;
-}
-	
+}   
+
 </style>
 
 	
 	
-<body>
+<body> <!--Start of the body (the actual content of the app that a user will see).-->
+	
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>App 6: HTML5 Canvas</h1>
+	<h1>App 6: HTML5 Canvas</h1> <!--Header on the app with the title of the assignment.-->
 </div>
 	
-<div id="content" class="w3-container">
-	<p> <canvas id="canvas" width="300" height="200" style="border:1px solid #000000;">
-            </canvas> <p>
+<div id="content" class="w3-container"> <!--Indicates start of the actual content on the page.--> 
 	
-	<a onclick="draw_rectangle();" class="w3-btn w3-black"> Draw a rectangle</a>
-	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a>
+	<p> <canvas id="canvas" width="300" height="200" style="border:1px solid #000000;"> </canvas> <p> <!--sets border and parameters for the canvas-->
+	
+	<a onclick="draw_rectangle();" class="w3-btn w3-black"> Draw a rectangle</a> <!--This is a button that runs the function "draw_rectangle" when pressed and will generate a rectangle onto the canvas.-->
+	
+	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a> <!--This is a button that runs function "add_name" when clicked on and will add "Amanda" onto the canvas.-->
 	
 
-		
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+</div> <!--Indicates end of the actual content on the page. Everything below this is just the disclaimer and footer.-->
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
