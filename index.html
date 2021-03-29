@@ -20,55 +20,55 @@ Brief Description of Goal of Code:
 The goal of this code is to create a canvas using HTML5 and add 4 required elements: rectangle, name, image, and a clearing function.
  
 Known Issues:
-I struggled a little bit with loading an image onto the canvas and clearing the canvas. 
+I struggled a little bit with loading an image onto the canvas.  
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
-   <head> 
+<head> 
       <title>App6---HTML5-Canvas</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
-   </head> 
+</head> 
 	
-<script>
+<script> //Beginning of JavaScript
+	
 var docMod = document.lastModified; // loads last modified time stamp into docMod variable
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 	
-var canvas= document.getElementById("canvas");
+var canvas= document.getElementById("canvas"); //these variables help in calling about the canvas so that the functions know where to run
 var ctx= canvas.getContext("2d");
 
-	
-function draw_rectangle() {
+function draw_rectangle() { //the function to draw a rectangle on the canvas
 	var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
- 	ctx.fillRect(50, 25, 150, 100);
+ 	ctx.fillRect(50, 25, 150, 100); //sets the parameters for how big the rectangle is
 }
 
-function add_name() {
+function add_name() { //the function to add text to the canvas, in this case, my name
         var canvas = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
-	ctx.font = "30px Arial";
-	ctx.fillText("Amanda Dieu", 10, 50);
+	ctx.font = "30px Arial"; //sets font for the text
+	ctx.fillText("Amanda Dieu", 10, 50); //sets size for how big the text will appear on the canvas
 }
 	
-function draw_image() {
+function draw_image() { //the funciton to add an image to the canvas
   	var c = document.getElementById("canvas");
 	var ctx = canvas.getContext("2d");
-  	var img = document.getElementById("puppy");
-  	ctx.drawImage(puppy,10,10);
- 
+  	var img = document.getElementById("puppy"); //calls about the image
+  	ctx.drawImage(puppy,10,10); //sets the size parameters for the image
 }	
-function clear_canvas(){
+	
+function clear_canvas(){ //the function that erases everything on the canvas
 	var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-	ctx.clearRect(1,1,200,200);
+	ctx.clearRect(1,1,200,200); //commands how much of the canvas to erase
 }
 
-</script>
+</script> <!--End JavaScript-->
 
 
 <style>	
@@ -90,24 +90,37 @@ function clear_canvas(){
     z-index: 1;
 }
 </style>
+	
+	
 <body>
+	
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>App 6: HTML5 Canvas</h1>
+	<h1>App 6: HTML5 Canvas</h1> <!--The header on the page and also the title of the assignment.-->
+	
 </div>
 	
 <div id="content" class="w3-container">
+	
+<!--This is the start of the actual content on the page.-->
+	
 	<p> <canvas id="canvas" width="300" height="200" style="border:1px solid #000000;">
-            </canvas> <p>
+            </canvas> <p> <!--This adds the canvas to the app and sets dimensions and border style.-->
 
-	<a onclick="draw_rectangle();" class="w3-btn w3-black"> Draw a rectangle</a>
-	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a>
-	<a onclick="draw_image();" class="w3-btn w3-black"> Add an image</a>
+	<a onclick="draw_rectangle();" class="w3-btn w3-black"> Draw a rectangle</a> <!--Button that runs the "draw_rectangle" function whenever clicked on to draw a rectangle on the canvas.-->
+	
+	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a> <!--Button that runs the "add_name" function whenever clicked on to add my name to the canvas.-->
+	
+	<a onclick="draw_image();" class="w3-btn w3-black"> Add an image</a> <!--Button that runs "draw_image" funciton whenever clicked on to add image that was chosen.-->
 	    <img id="puppy" src="https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2020/07/09151754/Golden-Retriever-puppy-standing-outdoors.jpg" alt="Golden Retriever Puppy" width="200" height="100">
-	<a onclick="clear_canvas();" class="w3-btn w3-black"> Clear</a>
+	
+	<a onclick="clear_canvas();" class="w3-btn w3-black"> Clear</a> <!--Button that runs "clear_canvas" function and erase canvas whenever clicked on.-->
+	
+<!--Everything below is just a disclaimer and not actual content dealing with the app itself.-->
 
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
 
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
