@@ -43,21 +43,21 @@ var ctx= canvas.getContext("2d");
 	
 function draw_rectangle() {
   var canvas = document.getElementById("canvas");
-  var context = canvas.getContext("2d");
-  context.fillRect(50, 25, 150, 100);
+  var ctx = canvas.getContext("2d");
+  ctx.fillRect(50, 25, 150, 100);
 }
 
 function add_name() {
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-ctx.font = "30px Arial";
-ctx.fillText("Amanda", 10, 50);
+        var canvas = document.getElementById("canvas");
+	var ctx = canvas.getContext("2d");
+	ctx.font = "30px Arial";
+	ctx.fillText("Amanda Dieu", 10, 50);
 }
 	
 function clear_canvas(){
 	var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-	context.clearRect(1,1,200,200);
+	ctx.clearRect(1,1,200,200);
 }
 
 </script>
