@@ -45,29 +45,10 @@ var dog1 = new Image();
 	dog1.src = "puppy-image.jpg"; //specifies specific image to use that has been saved to file
 	
 	
-function draw_a() {  //creates a rectangle
-  var a_canvas = document.getElementById("a");
-  var a_context = a_canvas.getContext("2d");
-  a_context.fillRect(50, 25, 150, 100); //sets parameters for the size of the rectangle within the canvas
-}
-
-function add_name() {  //writes my name onto the canvas
-  var a_canvas = document.getElementById("a");
-  var a_context = a_canvas.getContext("2d");
-  a_context.fillText("Amanda Dieu"), 50,80); //sets parameters for how big my name will appear on the canvas
-}	
-function draw_image() {  //draws a pre-set image onto the canvas
-	var a_canvas = document.getElementById("a");
-	var a_context = a_canvas.getContext("2d");
-	a_context.drawImage(dog1, 80,80,100,100); // function that draws the image 
-}
-function eventDogLoad() {  //creates function that specifies the chosen image to the canvas
-	drawScreen();
-}
-function clear_canvas() {  //clears the canvas
-	var a_canvas = document.getElementById("a");
-	var a_context = a_canvas.getContext("2d");
-	a_context.clearRect(1,1,200,200); //clears the canvas set to dimensions listed
+function draw_b() {
+  var b_canvas = document.getElementById("b");
+  var b_context = b_canvas.getContext("2d");
+  b_context.fillRect(50, 25, 150, 100); //sets parameters for the size of the rectangle within the canvas
 }
 	
 </script> <!--End of Javascript-->
@@ -105,7 +86,7 @@ function clear_canvas() {  //clears the canvas
 	
 <div id="content" class="w3-container"> <!--Indicates start of the actual content on the page.--> 
 	
-	<center> <canvas id="a" width="300" height="200" style="border:1px solid #000000;"> </canvas> <center> <!--sets border and parameters for the canvas-->
+	<p><canvas id="b" width="200" height="100" style="border:1px solid #000000;"></canvas></p><!--sets border and parameters for the canvas-->
 	
 	<center> <button onclick = "draw_a();">Draw rectangle</button><center> <!--This is a button that runs the function "draw_rectangle" when pressed and will generate a rectangle onto the canvas.-->
 	
