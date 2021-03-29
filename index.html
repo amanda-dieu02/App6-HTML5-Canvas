@@ -44,6 +44,8 @@ var dog1 = new Image();
 	dog1.addEventListener('load'), eventDogLoad, false); // adds image to dog1 file
 	dog1.src = "puppy-image.jpg"; //specifies specific image to use that has been saved to file
 	
+  var b_canvas = document.getElementById("b");
+  var b_context = b_canvas.getContext("2d");	
 	
 function draw_b() {
   var b_canvas = document.getElementById("b");
