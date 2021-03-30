@@ -53,11 +53,12 @@ function add_name() { //the function to add text to the canvas, in this case, my
 
 }
 	
-function draw_image() {
-  	var canvas = document.getElementById("canvas");
-  	var ctx = canvas.getContext("2d");
-  	var puppy = document.getElementById("puppy");
-        ctx.drawImage("puppy", 10, 50);
+var canvas = document.getElementById("canvas");
+  var ctx = canvas.getContext("2d");
+  var puppy = new Image();
+  puppy.src = "https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2";
+  puppy.onload = function add_image() {
+    ctx.drawImage(puppy, 0, 0);
 }	
 	
 function clear_canvas(){ //the function that erases everything on the canvas
