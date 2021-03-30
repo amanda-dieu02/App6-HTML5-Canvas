@@ -55,16 +55,23 @@ function add_name() { //the function to add text to the canvas, in this case, my
 	
   var puppy = new Image(); //this declares that the new variable "puppy" is with a new image
   puppy.src = "https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2"; //this line declares the source of the actual picture
-  puppy.onload = function add_image() { //sets up function to add the image to the canvas
+  puppy.onload = function add_image() { //sets up function to connect to image
+	  scaleToFit(this); //tells program to scale the image to fit the canvas
 
 }
 	
-function add_image(){
+function add_image(){ //the actual function that adds the image to the canvas
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     ctx.drawImage(puppy, 0, 0); //sets size for the picture to display in the canvas
 }	
 	
+function scaleToFit(img){ // function to scale down the picture to fit the canvas
+    var scale = Math.min(canvas.width / img.width, canvas.height / img.height); // get the top left position of the image
+    var x = (canvas.width / 2) - (img.width / 2) * scale; //sets variable x as half the canvas width minus half the image width to be able to scale the width of the image
+    var y = (canvas.height / 2) - (img.height / 2) * scale; //sets variable y as half the canvas height minus half the image height to scale the height of the image to fit the canvas
+    ctx.drawImage(puppy, x, y, img.width * scale, img.height * scale);
+}	
 function clear_canvas(){ //the function that erases everything on the canvas
 	var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
