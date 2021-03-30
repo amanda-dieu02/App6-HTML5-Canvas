@@ -54,7 +54,7 @@ function add_name() { //the function to add text to the canvas, in this case, my
 }
 	
   var puppy = new Image(); //this declares that the new variable "puppy" is with a new image
-  puppy.src = "https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2"; //this line declares the source of the actual picture
+  puppy.src = "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=980:*"; //this line declares the source of the actual picture
   puppy.onload = function add_image() { //sets up function to connect to image
 	  
 
@@ -69,7 +69,7 @@ function add_image(){ //the actual function that adds the image to the canvas
 function clear_canvas(){ //the function that erases everything on the canvas
 	var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-	ctx.clearRect(1,1,500,700); //commands how much of the canvas to erase
+	ctx.clearRect(1,1,700,400); //commands how much of the canvas to erase
 }
 
 </script> <!--End JavaScript-->
@@ -107,7 +107,7 @@ function clear_canvas(){ //the function that erases everything on the canvas
 	
 <!--This is the start of the actual content on the page.-->
 	
-	<p> <canvas id="canvas" width="500" height="700" style="border:1px solid #000000;">
+	<p> <canvas id="canvas" width="700" height="400" style="border:1px solid #000000;">
             </canvas> <p> <!--This adds the canvas to the app and sets dimensions and border style.-->
 
 	<a onclick="draw_rectangle();" class="w3-btn w3-black"> Draw a rectangle</a> <!--Button that runs the "draw_rectangle" function whenever clicked on to draw a rectangle on the canvas.-->
@@ -115,8 +115,6 @@ function clear_canvas(){ //the function that erases everything on the canvas
 	<a onclick="add_name();" class="w3-btn w3-black"> Add name</a> <!--Button that runs the "add_name" function whenever clicked on to add my name to the canvas.-->
 	
 	<a onclick="add_image();" class="w3-btn w3-black"> Add an image</a> <!--Button that runs "draw_image" function whenever clicked on to add image that was chosen.-->
-	
-		<img id="puppy" src="https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2" alt="Golden Retriever Puppy" width="120" height="177"> <!--Sets up the image, with source and alternative viewing.-->
 	
 	<a onclick="clear_canvas();" class="w3-btn w3-black"> Clear</a> <!--Button that runs "clear_canvas" function and erase canvas whenever clicked on.-->
 	
