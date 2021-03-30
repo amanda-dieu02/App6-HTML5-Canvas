@@ -53,11 +53,13 @@ function add_name() { //the function to add text to the canvas, in this case, my
 
 }
 	
-var canvas = document.getElementById("canvas");
-  var ctx = canvas.getContext("2d");
   var puppy = new Image(); //this declares that the new variable "puppy" is with a new image
   puppy.src = "https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2"; //this line declares the source of the actual picture
   puppy.onload = function add_image() { //sets up function to add the image to the canvas
+
+}
+	
+function add_image(){
     ctx.drawImage(puppy, 0, 0); //sets size for the picture to display in the canvas
 }	
 	
