@@ -60,6 +60,8 @@ function add_name() { //the function to add text to the canvas, in this case, my
 }
 	
 function add_image(){
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
     ctx.drawImage(puppy, 0, 0); //sets size for the picture to display in the canvas
 }	
 	
