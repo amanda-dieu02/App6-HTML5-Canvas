@@ -40,8 +40,8 @@ alert("This file last modified " + docMod); // generates alert box with time sta
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 	
 function draw_rectangle() { //the function to draw a rectangle on the canvas
-	var canvas = document.getElementById("canvas");
-	var ctx = canvas.getContext("2d");
+	var canvas = document.getElementById("canvas"); //this variable just calls the function to run on the canvas
+	var ctx = canvas.getContext("2d"); // this variable calls on the context of the canvas, which is in 2d
  	ctx.fillRect(50, 25, 150, 100); //sets the parameters for how big the rectangle is
 }
 
@@ -55,10 +55,10 @@ function add_name() { //the function to add text to the canvas, in this case, my
 	
 var canvas = document.getElementById("canvas");
   var ctx = canvas.getContext("2d");
-  var puppy = new Image();
-  puppy.src = "https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2";
-  puppy.onload = function add_image() {
-    ctx.drawImage(puppy, 0, 0);
+  var puppy = new Image(); //this declares that the new variable "puppy" is with a new image
+  puppy.src = "https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2"; //this line declares the source of the actual picture
+  puppy.onload = function add_image() { //sets up function to add the image to the canvas
+    ctx.drawImage(puppy, 0, 0); //sets size for the picture to display in the canvas
 }	
 	
 function clear_canvas(){ //the function that erases everything on the canvas
@@ -111,7 +111,7 @@ function clear_canvas(){ //the function that erases everything on the canvas
 	
 	<a onclick="draw_image();" class="w3-btn w3-black"> Add an image</a> <!--Button that runs "draw_image" function whenever clicked on to add image that was chosen.-->
 	
-		<img id="puppy" src="https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2" alt="Golden Retriever Puppy" width="177" height="113"> 
+		<img id="puppy" src="https://assets.animalhumanesociety.org/animalhumanesociety.org/files/styles/scale_width_960/public/media/image/2019-05/Puppy.jpg?itok=siM71WX2" alt="Golden Retriever Puppy" width="177" height="113"> <!--Sets up the image, with source and alternative viewing.-->
 	
 	<a onclick="clear_canvas();" class="w3-btn w3-black"> Clear</a> <!--Button that runs "clear_canvas" function and erase canvas whenever clicked on.-->
 	
